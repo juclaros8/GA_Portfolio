@@ -1,0 +1,602 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* MAIN IMAGE */
+.image-container {
+    height: 80vh;
+}
+.image-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background-image: radial-gradient(ellipse at center, rgba(0,0,0,0) 20%,rgba(0,0,0,1) 80%), url('https://i.pinimg.com/originals/a3/9d/43/a39d434ba387b4f4657abb63a45000c9.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+.greetings {
+    color: white;
+    position: absolute;
+    margin:20%;
+    line-height: 1.5;
+    font-family: "Trirong";
+}
+@media all and (max-width: 770px) {
+    .greetings h1{
+        display: flex;
+        justify-content: center;
+    }
+}
+span {
+    font-size: 3.5em;
+}
+h1 {
+    font-size: 2em;
+}
+h2{
+    text-align: center;
+}
+
+/* STICKY NAVBAR */
+.header{
+    border-bottom: 1px solid #E2E8F0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color:#16c1e2;
+    width: 100%;
+}
+.hamburger {
+    display: none;
+}
+
+.bars {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.nav-menu li{
+    list-style: none;
+}
+.nav-menu li a {
+    text-decoration: none;
+}
+.nav-i {
+    margin-left: 5rem;
+}
+
+.nav-link{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: white;
+    font-family: "Trirong";
+}
+
+.nav-link:hover{
+    color: black;
+}
+
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: black;
+        width: 50%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-i {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 1;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+} 
+
+/* ABOUT ME */
+.aboutMeHeader {
+    text-align: center;
+    font-size: 3em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: "Trirong";
+}
+.info_about_me {
+    text-align: center;
+    line-height: 1.5;
+}
+.about_me, .info_about_me{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    color: rgb(189, 185, 185);
+}
+.info_about_me, .aboutMeHeader {
+    display: flex;
+    flex-direction: column;
+}
+#WebDevImage{
+   width: 40%;
+   height: auto; 
+   padding: 1px;
+   border: 1px solid #021a40;
+   border-radius: 20px;
+   opacity: .5;
+}
+#WebDevImage:hover {
+    background-color: black;
+    opacity: 1;
+}
+@media only screen and (max-width: 768px) {
+    #WebDevImage {
+        width: 50%;
+        height: 50%;
+    }
+}
+@media only screen and (max-width: 375px) {
+    #WebDevImage {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .about_me {
+        display:flex;
+        flex-direction: column;
+    }
+}
+
+/* SKILLS */
+.skillsHeader {
+    text-align: center;
+    font-size: 3em;
+    margin-top: 20px;
+    font-family: "Trirong";
+}
+.skills_list {
+    text-align: center;
+    line-height: 1.5;
+}
+.skills, .skills_list{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: white;
+    color: rgb(151, 147, 147);
+}
+.skills_list, .skillsHeader {
+    display: flex;
+    flex-direction: column;
+}
+#KeyboardImage{
+   width: 35%;
+   height: auto; 
+   padding: 1px;
+   border: 1px solid #021a40;
+   border-radius: 20px;
+   opacity: .5;
+}
+#KeyboardImage:hover {
+    background-color: black;
+    opacity: 1;
+}
+@media only screen and (max-width: 768px) {
+    #KeyboardImage {
+        width: 50%;
+        height: 50%;
+    }
+}
+@media only screen and (max-width: 375px) {
+    #KeyboardImage {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .skills {
+        display:flex;
+        flex-direction: column;
+    }
+}
+
+/* RESUME */
+.Resume {
+    background-color:black;
+    color: rgb(189, 185, 185); 
+}
+.resumeHeader {
+    text-align: center;
+    font-size: 3em;
+    padding-top: 20px;
+    font-family: "Trirong";
+}
+.resume-info {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+ .button {
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    color: white;
+    padding-bottom: 20px;
+}
+.button:hover {
+    color:#16c1e2;
+}
+
+/* EDUCATION */
+.education-header {
+    padding-top: 20px;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    text-align: center;
+    color: black;
+    font-family: "Trirong";
+}
+#edu {
+    background-color: white;
+    margin:auto;
+    height: auto;
+    text-align: center;
+}
+.boxes {
+    margin-top: 30px;
+}
+.boxes li{
+    list-style: none;
+    border-radius: 20px;
+}
+.box1 {
+    background-color:rgb(141, 157, 187);
+    z-index: 1; 
+    height: 90px;
+    margin-top: 20px; 
+    margin-left: 10%;
+}
+.box2 {
+    background-color: rgb(171, 184, 206);
+    z-index: 2;
+    height: 90px;
+    margin-top: 20px;
+    margin-left: 25%;
+}
+.box3 {
+    background-color:rgb(229, 235, 247);
+    z-index: 3;
+    height: 90px;
+    margin-top: 20px;
+    margin-left: 40%;
+    margin-bottom: 20px;
+}
+.box1:hover {
+    z-index: 10;
+}
+.box2:hover {
+    z-index: 9;
+}
+.box3:hover {
+    z-index: 8;
+}
+@media (max-width: 768px){
+    .education {
+        font-size: 12px;
+        overflow-wrap: normal;
+        hyphens: auto;
+    }
+}
+@media (max-width: 500px){
+    .education {
+        font-size: 10px;
+    }
+}
+@media (max-width: 375px){
+    .boxes {
+        width: 100%;
+    }
+    .education {
+        font-size: 9px;
+    }
+}
+/* WORK */
+.work-header {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    text-align: center;
+    font-family: "Trirong";
+}
+#workEx {
+    background-color: white;
+    margin:auto;
+    height: auto;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.boxes2 {
+    margin-top: 30px;
+}
+.boxes2 li{
+    list-style: none;
+    border-radius: 20px;
+}
+.box4 {
+    background-color:rgb(223, 234, 241);
+    z-index: 1; 
+    height: 90px;
+    margin-top: 20px; 
+    margin-left: 40%;
+}
+.box5 {
+    background-color:rgb(176, 216, 241);
+    z-index: 2;
+    height: 90px;
+    margin-top: 20px;
+    margin-left: 25%;
+}
+.box6 {
+    background-color:rgb(94, 180, 233);
+    z-index: 3;
+    height: 90px;
+    margin-top: 20px;
+    margin-left: 10%;
+}
+.box4:hover {
+    z-index: 10;
+}
+.box5:hover {
+    z-index: 9;
+}
+.box6:hover {
+    z-index: 8;
+}
+@media (max-width: 768px){
+    .work {
+        font-size: 12px;
+        overflow-wrap: normal;
+        hyphens: auto;
+    }
+}
+@media (max-width: 500px){
+    .work {
+        font-size: 10px;
+    }
+}
+@media (max-width: 375px){
+    .boxes2 {
+        width: 100%;
+    }
+    .work {
+        font-size: 9px;
+    }
+}
+.box1, .box2, .box3, .box4, .box5, .box6{
+    transition: all 1s;
+    width: 50%;
+    
+}
+.box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover, .box6:hover {
+    /* -webkit-tranform: rotate(360deg); */
+    transform: scale(1.2);
+}
+.boxHeader {
+    font-size: 1.2em;
+    text-decoration:underline double;
+} 
+
+/* PROJECTS */
+#projects {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.projectsHeader {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-family: "Trirong";
+}
+.slideshow {
+    max-width: 1000px;
+    position:relative;
+    margin: auto;
+}
+  
+.Slides {
+    display: none;
+}
+  /* buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+    .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+/* Caption*/
+.text {
+    color: #f2f2f2;
+    font-size: 2em;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    font-family: "Trirong";
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #16c1e2;
+}
+/* Fade*/
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.fade:hover {
+    visibility: visible;
+}
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.fade img:hover {
+    background: rgba(0,0,0,.1);
+    opacity: .5;
+}
+.fade .text{
+    visibility: hidden;
+}
+.fade:hover .text{
+    visibility: visible;
+    color: black;
+}
+
+/* CONTACT ME */
+form { 
+    max-width:420px; 
+    margin:50px auto; 
+}
+.feedback-input {
+  color:black;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #CC6666;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+.feedback-input:focus { 
+    border:2px solid #CC4949; 
+}
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+[type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:#CC6666;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:black;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:5px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { 
+    background:#CC4949; 
+}
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: center;
+}
+footer img{
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+}
+
+.resume .LinkedInIcon {
+    display: flex;
+    justify-content: center;
+}
+.githubIcon, .LinkedInIcon {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+}
